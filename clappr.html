@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> Api Clappr Player </title><style>
+#player{width:100%;height:100%;position:absolute;top:0;right:0;left:0}
+video {object-fit: fill;}</style>
+<script src='https://cdn.jsdelivr.net/clappr/latest/clappr.min.js' type='text/javascript'></script>
+<script src='https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js' type='text/javascript'></script>
+</head><body><div id="player"></div><script>
+function get(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");
+var n="[\\?$]"+e+"=([^$#]*)",
+l=new RegExp(n),
+c=l.exec(window.location.href);
+return null==c?"//www.drivetv.ga/video.mp4":unescape(c[1])}
+var link=get("src");
+var player = new Clappr.Player(
+{source:link,
+poster: "",autoPlay:true,height:"100%",
+width:"100%",parentId: "#player",mediacontrol: {seekbar: "#ff1d04", buttons: "#ff1d04"},
+});</script></body></html>
+<!--
+http://www.html-editor.ml/clappr.html?src=https://documentary.streaming.aljazeera.net/apple/aljazeera/doc/appleman806.m3u8
+-->
